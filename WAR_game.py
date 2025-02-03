@@ -1,5 +1,5 @@
-import Player
-import Deck
+from Deck import Deck
+from Player import Player
 
 class WarGame:
     def __init__(self, player1_name="Player 1", player2_name="Player 2"):
@@ -10,7 +10,7 @@ class WarGame:
         self.rounds_played = 0
 
     def play_round(self):
-        """Plays a single round of War and returns the winner or None if ongoing."""
+        """Plays a single round of War and returns the winner if the game ends"""
         self.rounds_played += 1
         print(f"\n--- Round {self.rounds_played} ---")
 
@@ -47,7 +47,7 @@ class WarGame:
         return self.get_winner()
 
     def get_winner(self):
-        """Returns the winner if the game is over, else None."""
+        """Returns the winner if the game is over, otherwise None."""
         if len(self.player1.deck) == 52:
             return self.player1.name
         elif len(self.player2.deck) == 52:
